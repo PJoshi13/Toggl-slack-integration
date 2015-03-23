@@ -10,7 +10,7 @@ app = Flask(__name__)
 token = "1e8e441f4cf317c4efc264b84aee1375"
 headers = {'content-type': 'application/json'}
 
-@app.route('/toogl start' methods=['GET', 'POST'])
+@app.route('/toogl start', methods=['GET', 'POST'])
 def get_tasks():
 	url = 'https://www.toggl.com/api/v8/workspaces/476356/tasks'
 	headers = {'content-type': 'application/json'}
