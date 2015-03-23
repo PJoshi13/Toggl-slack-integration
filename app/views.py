@@ -41,4 +41,4 @@ def start_task():
     return p.json()
 
 if __name__ == '__main__':
-    app.run(host='104.131.72.152:5000')
+    app.run(host='104.131.72.152')
