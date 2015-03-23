@@ -2,9 +2,7 @@ from flask import Flask, request
 
 from urllib import urlencode
 from requests.auth import HTTPBasicAuth
-from PyToggl import PyToggl
 import getpass, requests, os, time, datetime, sys, select, termios, tty
-pytoggl = PyToggl('1e8e441f4cf317c4efc264b84aee1375')
 
 app = Flask(__name__)
 token = "1e8e441f4cf317c4efc264b84aee1375"
