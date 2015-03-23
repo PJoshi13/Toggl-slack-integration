@@ -14,7 +14,6 @@ def get_tasks():
 	orig   = request.form['text']
 	g = requests.GET(url, headers=headers, auth=HTTPBasicAuth(token, 'api_token'))
 	import pdb; pdb.set_trace()
-    print g.json()
 	return g.json()
 
 @app.route('/toggl starts', methods=['GET', 'POST'])
