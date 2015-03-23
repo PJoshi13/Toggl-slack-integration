@@ -10,10 +10,11 @@ headers = {'content-type': 'application/json'}
 
 @app.route('/toggl start', methods=['GET', 'POST'])
 def get_tasks():
-	url = 'https://www.toggl.com/api/v8/workspaces/476356/tasks'
+	url = 'https://www.toggl.com/api/v8/tasks/1573236'
 	orig   = request.form['text']
 	g = requests.GET(url, headers=headers, auth=HTTPBasicAuth(token, 'api_token'))
 	import pdb; pdb.set_trace()
+    print g.json()
 	return g.json()
 
 @app.route('/toggl starts', methods=['GET', 'POST'])
@@ -36,7 +37,7 @@ def start_task():
 
     r = requests.POST(url, params=data)
     import pdb; pdb.set_trace()
-    return p.json()
+    return r.json()
 
 if __name__ == '__main__':
     app.run(host='104.131.72.152')
