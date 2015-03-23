@@ -74,16 +74,8 @@ def new_time_entry(description, taskID=False):
     start_time = datetime.datetime.utcnow()
     local_start_time = datetime.datetime.now()
 
-    # Let user know the timer has started, and wait for them to press
-    # Enter to stop it.
-    timer_start_print(description, local_start_time)
 
-    try:
-        raw_input()
-    except (KeyboardInterrupt, SystemExit):
-        # Break out of main While loop, go back to menu.
-        print "\nTimer cancelled. Returning to main menu...\n"
-        return
+    send_data("time_entries", data=data)
 
     print "Sending data..."
 
@@ -93,7 +85,5 @@ def new_time_entry(description, taskID=False):
 
     # Data passed to the request
 
-    print "Success."
-
 if __name__ == '__main__':
-    app.run(host='104.131.72.152')
+    app.run(host='104.131.72.152:5000')
