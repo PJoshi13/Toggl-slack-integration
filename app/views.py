@@ -12,7 +12,7 @@ headers = {'content-type': 'application/json'}
 def get_tasks():
 	url = 'https://www.toggl.com/api/v8/tasks/1573236'
 	orig   = request.form['text']
-	g = requests.POST(url, headers=headers, auth=HTTPBasicAuth(token, 'api_token'))
+	g = requests.GET(url, headers=headers, auth=HTTPBasicAuth(token, 'api_token'))
 	return g.json()
 
 @app.route('/toggl starts', methods=['GET', 'POST'])
